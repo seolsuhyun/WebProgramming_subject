@@ -6,7 +6,8 @@
 <body>
 <div class="container">
   <h1>Edit Product</h1>
-  <form th:action="@{/products/save}" th:object="${product}" method="post">
+  <form th:action="@{/products/edit/{id}(id=${product.id})}" th:object="${product}" method="post">
+
 
     <div class="mb-3">
       <label for="name" class="form-label">Name:</label>
