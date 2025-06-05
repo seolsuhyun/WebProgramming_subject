@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/helloSpringDataJpa/login">
+    <input type="text" name="username" placeholder="이메일" />
+    <input type="password" name="password" placeholder="비밀번호" />
+    <button type="submit">로그인</button>
+</form>
+
+<a href="/helloSpringDataJpa/register">회원가입</a>
+<div th:if="${errorMsg}" class="alert alert-danger" th:text="${errorMsg}"></div>
+<div th:if="${logoutMsg}" class="alert alert-info" th:text="${logoutMsg}"></div>
+
+
+</body>
+</html>

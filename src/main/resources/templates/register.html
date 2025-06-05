@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+</head>
+<body>
+
+<h2>회원가입</h2>
+
+<!-- 에러 메시지 출력 -->
+
+
+<form th:action="@{/register}" th:object="${member}" method="post">
+    <input type="text" th:field="*{email}" placeholder="이메일"/>
+    <input type="password" th:field="*{password}" placeholder="비밀번호"/>
+    <button type="submit">회원가입</button>
+    <div th:if="${#fields.hasErrors('*')}">
+        <ul>
+            <li th:each="err : ${#fields.errors('email')}" th:text="${err}"></li>
+            <li th:each="err : ${#fields.errors('password')}" th:text="${err}"></li>
+        </ul>
+    </div>
+</form>
+
+<a href="/helloSpringDataJpa/login">로그인</a>
+
+</body>
+</html>
